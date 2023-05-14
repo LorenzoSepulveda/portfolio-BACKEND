@@ -1,7 +1,6 @@
-//esta clase genera el token y tiene metodos de validacion
-package com.portfolio.yoProgramo.security.jwt;
+package com.portfolio.ls.Security.jwt;
 
-import com.portfolio.yoProgramo.security.enums.entity.UsuarioPrincipal;
+import com.portfolio.ls.Security.Entity.UsuarioPrincipal;
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.MalformedJwtException;
@@ -17,7 +16,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class JwtProvider {
-
+    
     private final static Logger logger = LoggerFactory.getLogger(JwtProvider.class);
 
     @Value("${jwt.secret}")
@@ -36,23 +35,28 @@ public class JwtProvider {
 
     public String getNombreUsuarioFromToken(String token) {
         return Jwts.parser().setSigningKey(secret).parseClaimsJws(token).getBody().getSubject();
+
     }
 
     public boolean validateToken(String token) {
         try {
             Jwts.parser().setSigningKey(secret).parseClaimsJws(token);
             return true;
-        } catch (MalformedJwtException e) {
-            logger.error("Token mal formado");
-        } catch (UnsupportedJwtException e) {
-            logger.error("Token no soportado");
-        } catch (ExpiredJwtException e) {
-            logger.error("Token expirado");
-        } catch (IllegalArgumentException e) {
-            logger.error("Token vacío");
-        } catch (SignatureException e) {
-            logger.error("Firma no válida");
+
+        }catch (MalformedJwtException e) {
+           logger.error("Token esta mal formado");
+        }catch (UnsupportedJwtException e) {
+           logger.error("Token no es soportado");
+        }catch (ExpiredJwtException e) {
+           logger.error("Token expirado");
+        }catch (IllegalArgumentException e) {
+           logger.error("Token vacio");
+        }catch (SignatureException e) {
+           logger.error("Firma no válida");
+
         }
         return false;
+
     }
+    
 }

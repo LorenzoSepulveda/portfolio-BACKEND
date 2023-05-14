@@ -1,7 +1,6 @@
-// usa la clase del provider para validar el token otra vez y se ejecuta cada vez q hacemos una modificacion por ej 
-package com.portfolio.yoProgramo.security.jwt;
+package com.portfolio.ls.Security.jwt;
 
-import com.portfolio.yoProgramo.security.service.UserDetailsImpl;
+import com.portfolio.ls.Secutiry.Service.UserDetailsImpl;
 import java.io.IOException;
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
@@ -17,16 +16,15 @@ import org.springframework.web.filter.OncePerRequestFilter;
 
 /**
  *
- * @author Usuario
+ * @author lor_b
  */
-public class JwtTokenFilter extends OncePerRequestFilter {
-
+public class JwtTokenFilter extends OncePerRequestFilter{
     private final static Logger logger = LoggerFactory.getLogger(JwtProvider.class);
-
+    
     @Autowired
     JwtProvider jwtProvider;
     @Autowired
-    UserDetailsImpl userDetailServiceImpl;
+    UserDetailsImpl userDetailsServiceImpl;
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
@@ -34,20 +32,21 @@ public class JwtTokenFilter extends OncePerRequestFilter {
             String token = getToken(request);
             if (token != null && jwtProvider.validateToken(token)) {
                 String nombreUsuario = jwtProvider.getNombreUsuarioFromToken(token);
-                UserDetails userDetails = userDetailServiceImpl.loadUserByUsername(nombreUsuario);
+                UserDetails userDetails = userDetailsServiceImpl.loadUserByUsername(nombreUsuario);
                 UsernamePasswordAuthenticationToken auth = new UsernamePasswordAuthenticationToken(userDetails,
-                        null, userDetails.getAuthorities());
+                null, userDetails.getAuthorities());
                 SecurityContextHolder.getContext().setAuthentication(auth);
             }
+
         } catch (Exception e) {
-            logger.error("Falló el metodo doFilterInternal");
+            logger.error("Falló el método doFilterInternal");
         }
         filterChain.doFilter(request, response);
     }
     
     private String getToken(HttpServletRequest request){
-        String header = request.getHeader("Autorization");
-        if (header != null && header.startsWith("Bearer"))
+        String header = request.getHeader("Authorization");
+        if(header != null && header.startsWith("Bearer"))
             return header.replace("Bearer", "");
         return null;
     }

@@ -1,7 +1,7 @@
 
-package com.portfolio.yoProgramo.security.repository;
+package com.portfolio.ls.Security.Repository;
 
-import com.portfolio.yoProgramo.security.enums.entity.Usuario;
+import com.portfolio.ls.Security.Entity.Usuario;
 import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
@@ -10,6 +10,6 @@ import org.springframework.stereotype.Repository;
 public interface iUsuarioRepository extends JpaRepository<Usuario, Integer>{
     Optional<Usuario> findByNombreUsuario(String nombreUsuario);
     
-    boolean existsByNombreUsuario(String nombreUsuario);
-    boolean existsByEmail(String email);
+    public boolean existsByNombreUsuario(String nombreUsuario);
+    public boolean existsByEmail(String email);
 }

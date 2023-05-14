@@ -1,6 +1,6 @@
 package com.portfolio.ls.Security.jwt;
 
-import com.portfolio.ls.Secutiry.Service.UserDetailsImpl;
+import com.portfolio.ls.Security.Service.UserDetailsImpl;
 import java.io.IOException;
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;

@@ -1,8 +1,8 @@
 package com.portfolio.ls.Security;
 
+import com.portfolio.ls.Security.Service.UserDetailsImpl;
 import com.portfolio.ls.Security.jwt.JwtEntryPoint;
 import com.portfolio.ls.Security.jwt.JwtTokenFilter;
-import com.portfolio.ls.Secutiry.Service.UserDetailsImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

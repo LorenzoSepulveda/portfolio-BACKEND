@@ -1,6 +1,8 @@
 com\portfolio\ls\Repository\IPersonaRepository.class
 com\portfolio\ls\Security\Entity\UsuarioPrincipal.class
+com\portfolio\ls\Security\Service\UserDetailsImpl.class
 com\portfolio\ls\Entity\Persona.class
+com\portfolio\ls\Security\Service\UsuarioService.class
 com\portfolio\ls\Security\jwt\JwtProvider.class
 com\portfolio\ls\Controller\CEducacion.class
 com\portfolio\ls\Security\Dto\NuevoUsuario.class
@@ -16,17 +18,15 @@ com\portfolio\ls\Security\Dto\JwtDto.class
 com\portfolio\ls\Security\MainSecurity.class
 com\portfolio\ls\Security\Entity\Usuario.class
 com\portfolio\ls\Security\jwt\JwtEntryPoint.class
-com\portfolio\ls\Secutiry\Service\UserDetailsImpl.class
 com\portfolio\ls\Controller\CExperiencia.class
 com\portfolio\ls\Entity\Educacion.class
 com\portfolio\ls\Repository\RExperiencia.class
 com\portfolio\ls\Security\Repository\iRolRepository.class
 com\portfolio\ls\Security\Dto\LoginUsuario.class
 com\portfolio\ls\Service\SExperiencia.class
-com\portfolio\ls\Secutiry\Service\UsuarioService.class
 com\portfolio\ls\Repository\REducacion.class
 com\portfolio\ls\Security\Repository\iUsuarioRepository.class
-com\portfolio\ls\Secutiry\Service\RolService.class
+com\portfolio\ls\Security\Service\RolService.class
 com\portfolio\ls\LsApplication.class
 com\portfolio\ls\Security\Enums\RolNombre.class
 com\portfolio\ls\Security\Entity\Rol.class

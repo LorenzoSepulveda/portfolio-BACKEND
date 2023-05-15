@@ -15,7 +15,6 @@ com\portfolio\ls\Security\jwt\JwtTokenFilter.class
 com\portfolio\ls\Interface\IPersonaService.class
 com\portfolio\ls\Service\Seducacion.class
 com\portfolio\ls\Dto\dtoExperiencia.class
-.netbeans_automatic_build
 com\portfolio\ls\Entity\Experiencia.class
 com\portfolio\ls\Security\Controller\Mensaje.class
 com\portfolio\ls\Security\Dto\JwtDto.class

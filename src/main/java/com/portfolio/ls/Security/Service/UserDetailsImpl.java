@@ -1,4 +1,7 @@
-
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package com.portfolio.ls.Security.Service;
 
 import com.portfolio.ls.Security.Entity.Usuario;
@@ -9,12 +12,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-/**
- *
- * @author lor_b
- */
 @Service
-public class UserDetailsImpl implements UserDetailsService{
+public class UserDetailsImpl implements UserDetailsService {
     @Autowired
     UsuarioService usuarioService;
 
@@ -23,6 +22,5 @@ public class UserDetailsImpl implements UserDetailsService{
         Usuario usuario = usuarioService.getByNombreUsuario(nombreUsuario).get();
         return UsuarioPrincipal.build(usuario);
     }
-
     
 }

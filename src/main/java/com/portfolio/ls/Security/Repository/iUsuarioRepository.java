@@ -1,4 +1,7 @@
-
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
+ */
 package com.portfolio.ls.Security.Repository;
 
 import com.portfolio.ls.Security.Entity.Usuario;
@@ -12,4 +15,9 @@ public interface iUsuarioRepository extends JpaRepository<Usuario, Integer>{
     
     public boolean existsByNombreUsuario(String nombreUsuario);
     public boolean existsByEmail(String email);
+
+    //public boolean existsByNombreUsuario(String nombreUsuario);
+
+    //public boolean existsByEmail(String email);
 }
+

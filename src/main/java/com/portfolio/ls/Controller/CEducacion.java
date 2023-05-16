@@ -21,17 +21,24 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/educacion")
-//@CrossOrigin(origins = "http://localhost:4200")
-@CrossOrigin(origins = "https://frontend-prueba-b6123.web.app")
+@CrossOrigin(origins = "https://frontend-prueba-b6123.web.app/")
 public class CEducacion {
     @Autowired
     Seducacion sEducacion;
-    
     
     @GetMapping("/lista")
     public ResponseEntity<List<Educacion>> list(){
         List<Educacion> list = sEducacion.list();
         return new ResponseEntity(list, HttpStatus.OK);
+    }
+    @GetMapping("/detail/{id}")
+    public ResponseEntity<Educacion> getById(@PathVariable("id")int id){
+        if(!sEducacion.existsById(id)){
+            return new ResponseEntity(new Mensaje("No existe el ID"), HttpStatus.BAD_REQUEST);
+        }
+        
+        Educacion educacion = sEducacion.getOne(id).get();
+        return new ResponseEntity(educacion, HttpStatus.OK);
     }
     
     @DeleteMapping("/delete/{id}")
@@ -56,7 +63,8 @@ public class CEducacion {
                 dtoeducacion.getNombreE(), dtoeducacion.getDescripcionE()
             );
         sEducacion.save(educacion);
-        return new ResponseEntity(new Mensaje("Educacion creada"), HttpStatus.OK);               
+        return new ResponseEntity(new Mensaje("Educacion creada"), HttpStatus.OK);
+                
     }
     
     @PutMapping("/update/{id}")
@@ -79,15 +87,5 @@ public class CEducacion {
         sEducacion.save(educacion);
         
         return new ResponseEntity(new Mensaje("Educacion actualizada"), HttpStatus.OK);
-    }
-    
-    @GetMapping("/detail/{id}")
-    public ResponseEntity<Educacion> getById(@PathVariable("id")int id){
-        if(!sEducacion.existsById(id)){
-            return new ResponseEntity(new Mensaje("No existe el ID"), HttpStatus.BAD_REQUEST);
-        }
-        
-        Educacion educacion = sEducacion.getOne(id).get();
-        return new ResponseEntity(educacion, HttpStatus.OK);
     }
 }

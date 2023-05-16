@@ -12,10 +12,6 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-/**
- *
- * @author lor_b
- */
 @Service
 @Transactional
 public class RolService {
@@ -31,4 +27,5 @@ public class RolService {
         irolRepository.save(rol);
     
     }
+    
 }

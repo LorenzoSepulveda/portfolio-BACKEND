@@ -1,4 +1,7 @@
-
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package com.portfolio.ls.Security.Entity;
 
 import com.portfolio.ls.Security.Enums.RolNombre;
@@ -18,6 +21,8 @@ public class Rol {
     @NotNull
     @Enumerated(EnumType.STRING)
     private RolNombre rolNombre;
+    
+    //Constructor
 
     public Rol() {
     }
@@ -25,6 +30,8 @@ public class Rol {
     public Rol(RolNombre rolNombre) {
         this.rolNombre = rolNombre;
     }
+    
+    //Getter y Setter
 
     public int getId() {
         return id;
@@ -41,6 +48,7 @@ public class Rol {
     public void setRolNombre(RolNombre rolNombre) {
         this.rolNombre = rolNombre;
     }
+    
     
     
 }

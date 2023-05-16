@@ -1,4 +1,13 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package com.portfolio.ls.Security.Service;
+
+/**
+ *
+ * @author lor_b
+ */
 
 import com.portfolio.ls.Security.Entity.Usuario;
 import com.portfolio.ls.Security.Repository.iUsuarioRepository;
@@ -7,13 +16,11 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-/**
- *
- * @author lor_b
- */
 @Service
 @Transactional
+
 public class UsuarioService {
+
     @Autowired
     iUsuarioRepository iusuarioRepository;
 

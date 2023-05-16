@@ -1,3 +1,7 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package com.portfolio.ls.Security.jwt;
 
 import com.portfolio.ls.Security.Entity.UsuarioPrincipal;
@@ -16,7 +20,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class JwtProvider {
-    
+
     private final static Logger logger = LoggerFactory.getLogger(JwtProvider.class);
 
     @Value("${jwt.secret}")
@@ -44,9 +48,9 @@ public class JwtProvider {
             return true;
 
         }catch (MalformedJwtException e) {
-           logger.error("Token esta mal formado");
+           logger.error("Token mal formado");
         }catch (UnsupportedJwtException e) {
-           logger.error("Token no es soportado");
+           logger.error("Token no soportado");
         }catch (ExpiredJwtException e) {
            logger.error("Token expirado");
         }catch (IllegalArgumentException e) {
@@ -58,5 +62,4 @@ public class JwtProvider {
         return false;
 
     }
-    
 }

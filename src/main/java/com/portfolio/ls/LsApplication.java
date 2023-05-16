@@ -11,11 +11,11 @@ import org.springframework.web.filter.CorsFilter;
 @SpringBootApplication
 public class LsApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(LsApplication.class, args);
-	}
-        
-        @Bean
+    public static void main(String[] args) {
+        SpringApplication.run(LsApplication.class, args);
+    }
+
+    @Bean
     public CorsFilter corsFilter() {
         CorsConfiguration corsConfiguration = new CorsConfiguration();
         corsConfiguration.setAllowCredentials(true);

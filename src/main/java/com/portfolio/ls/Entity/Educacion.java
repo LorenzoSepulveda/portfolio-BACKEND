@@ -1,10 +1,14 @@
-
 package com.portfolio.ls.Entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
+/**
+ *
+ * @author lor_b
+ */
 
 @Entity
 public class Educacion {
@@ -45,4 +49,6 @@ public class Educacion {
     public void setDescripcionE(String descripcionE) {
         this.descripcionE = descripcionE;
     }
+    
+    
 }

@@ -1,3 +1,7 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package com.portfolio.ls.Security.jwt;
 
 import com.portfolio.ls.Security.Service.UserDetailsImpl;
@@ -16,11 +20,12 @@ import org.springframework.web.filter.OncePerRequestFilter;
 
 /**
  *
- * @author lor_b
+ * @author Natalin
  */
-public class JwtTokenFilter extends OncePerRequestFilter{
+public class JwtTokenFilter extends OncePerRequestFilter {
+
     private final static Logger logger = LoggerFactory.getLogger(JwtProvider.class);
-    
+
     @Autowired
     JwtProvider jwtProvider;
     @Autowired
@@ -34,7 +39,7 @@ public class JwtTokenFilter extends OncePerRequestFilter{
                 String nombreUsuario = jwtProvider.getNombreUsuarioFromToken(token);
                 UserDetails userDetails = userDetailsServiceImpl.loadUserByUsername(nombreUsuario);
                 UsernamePasswordAuthenticationToken auth = new UsernamePasswordAuthenticationToken(userDetails,
-                null, userDetails.getAuthorities());
+                        null, userDetails.getAuthorities());
                 SecurityContextHolder.getContext().setAuthentication(auth);
             }
 
@@ -50,4 +55,5 @@ public class JwtTokenFilter extends OncePerRequestFilter{
             return header.replace("Bearer", "");
         return null;
     }
+
 }

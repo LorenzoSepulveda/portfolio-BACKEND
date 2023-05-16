@@ -1,4 +1,7 @@
-
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package com.portfolio.ls.Service;
 
 import com.portfolio.ls.Entity.Experiencia;
@@ -9,7 +12,6 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-
 @Service
 @Transactional
 public class SExperiencia {
@@ -17,11 +19,13 @@ public class SExperiencia {
     RExperiencia rExperiencia;
     
     public List<Experiencia> list(){
-        return rExperiencia.findAll(); 
+        return rExperiencia.findAll();
+    
     }
     
     public Optional<Experiencia> getOne(int id){
         return rExperiencia.findById(id);
+    
     }
     
     public Optional<Experiencia> getByNombreE(String nombreE){
@@ -43,5 +47,6 @@ public class SExperiencia {
     
     public boolean existsByNombreE(String nombreE){
         return rExperiencia.existsByNombreE(nombreE);
+    
     }
 }

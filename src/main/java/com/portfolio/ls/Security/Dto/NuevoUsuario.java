@@ -1,3 +1,7 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package com.portfolio.ls.Security.Dto;
 
 import java.util.HashSet;
@@ -13,6 +17,9 @@ public class NuevoUsuario {
     private String email;
     private String password;
     private Set<String> roles = new HashSet<>();
+    
+    
+    //Getter y Setter
 
     public String getNombre() {
         return nombre;

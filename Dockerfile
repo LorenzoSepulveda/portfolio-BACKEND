@@ -1,5 +1,5 @@
-FROM amazoncorretto:11-alpine-jdk
-MAINTAINER LS
+FROM amazoncorretto:8-alpine-jdk
+MAINTAINER ls
 COPY target/ls-0.0.1-SNAPSHOT.jar ls-app.jar
 EXPOSE 808
-ENTRYPOINT ["java","-jar","/ls-app.jar"]
+ENTRYPOINT  ["java","-jar","ls-app.jar"]

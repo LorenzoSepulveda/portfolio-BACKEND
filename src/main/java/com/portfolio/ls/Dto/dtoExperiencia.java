@@ -1,4 +1,7 @@
-
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package com.portfolio.ls.Dto;
 
 import javax.validation.constraints.NotBlank;
@@ -7,11 +10,15 @@ import javax.validation.constraints.NotBlank;
  *
  * @author lor_b
  */
+
 public class dtoExperiencia {
+    
     @NotBlank
     private String nombreE;
     @NotBlank
     private String descripcionE;
+    
+    //Constructores
 
     public dtoExperiencia() {
     }
@@ -21,6 +28,8 @@ public class dtoExperiencia {
         this.descripcionE = descripcionE;
     }
     
+    //Getters y Setters
+
     public String getNombreE() {
         return nombreE;
     }
@@ -36,4 +45,6 @@ public class dtoExperiencia {
     public void setDescripcionE(String descripcionE) {
         this.descripcionE = descripcionE;
     }
+
+   
 }

@@ -1,3 +1,4 @@
+
 package com.portfolio.ls.Service;
 
 import com.portfolio.ls.Entity.Educacion;
@@ -9,8 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
- *
- * @author lor_b
+ * @author Natalin Acuña
  */
 @Service
 @Transactional

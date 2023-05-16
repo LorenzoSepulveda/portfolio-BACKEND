@@ -1,7 +1,12 @@
+
 package com.portfolio.ls.Dto;
 
 import javax.validation.constraints.NotBlank;
 
+/**
+ *
+ * @author lor_b
+ */
 
 public class dtoEducacion {
     @NotBlank
@@ -32,4 +37,6 @@ public class dtoEducacion {
     public void setDescripcionE(String descripcionE) {
         this.descripcionE = descripcionE;
     }
+    
+    
 }

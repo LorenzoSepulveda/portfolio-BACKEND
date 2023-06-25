@@ -36,18 +36,18 @@ public class PersonaController {
 
     @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/personas/borrar/{id}")
-    public String deletePersona(@PathVariable Long id) {
-        ipersonaService.deletePersona(id);
+    public String deletePersona(@PathVariable String id) {
+        ipersonaService.deletePersona(Integer.valueOf(id));
         return "La persona fue eliminada correctamente";
     }
 
     @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/personas/editar/{id}")
-    public Persona editPersona(@PathVariable Long id,
+    public Persona editPersona(@PathVariable String id,
             @RequestParam("nombre") String nuevoNombre,
             @RequestParam("apellido") String nuevoApellido,
             @RequestParam("img") String nuevoImg) {
-        Persona persona = ipersonaService.findPersona(id);
+        Persona persona = ipersonaService.findPersona(Integer.valueOf(id));
 
         persona.setNombre(nuevoNombre);
         persona.setApellido(nuevoApellido);
@@ -57,9 +57,9 @@ public class PersonaController {
         return persona;
     }
 
-    @GetMapping("personas/traer/perfil")
-    public Persona findPersona() {
-        return ipersonaService.findPersona((long) 1);
+    @GetMapping("personas/traer/perfil/{personaID}")
+    public Persona findPersona(@PathVariable(value="someID") String id) {
+        return ipersonaService.findPersona(Integer.valueOf(id));
     }
 
 }
